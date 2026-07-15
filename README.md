@@ -166,10 +166,6 @@ http://127.0.0.1:5000
 
 ![Prediction](screenshots/prediction.png)
 
-### Top-3 Predictions
-
-![Top 3](screenshots/top3.png)
-
 ---
 
 ## 📈 Model Performance
@@ -199,7 +195,7 @@ http://127.0.0.1:5000
 
 ## 👩‍💻 Author
 
-**Vanshikha Singh**
+**Vanshikha **
 
 B.Tech Computer Science Engineering
 
