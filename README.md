@@ -1,35 +1,45 @@
-AI Handwritten Digit Recognition using CNN
-🚀 Overview
+# 🤖 AI Handwritten Digit Recognition using CNN
 
-This project is a web-based Handwritten Digit Recognition System built using TensorFlow, Keras, Flask, and OpenCV.
+A modern web application that recognizes handwritten digits (0–9) using a **Convolutional Neural Network (CNN)** trained on the **MNIST dataset**. The project features a beautiful **Glassmorphism UI**, automatic image preprocessing with **OpenCV**, and real-time predictions using **Flask**.
 
-It uses a Convolutional Neural Network (CNN) trained on the MNIST dataset to recognize handwritten digits (0–9) from uploaded images.
+---
 
-The application performs automatic image preprocessing, digit extraction, and prediction with confidence scores.
+## 📌 Features
 
-✨ Features
-Handwritten digit recognition (0–9)
-CNN model with 99.59% test accuracy
-Automatic image preprocessing
-Works with white and dark backgrounds
-Drag & Drop image upload
-Image preview
-Confidence score
-Top-3 predictions
-Glassmorphism UI
-Responsive design
-Flask backend
-🛠 Tech Stack
-Python
-TensorFlow
-Keras
-Flask
-OpenCV
-NumPy
-HTML
-CSS
-JavaScript
-📂 Project Structure
+- 🔢 Handwritten Digit Recognition (0–9)
+- 🧠 CNN Model built using TensorFlow/Keras
+- 🎯 Achieved **99.59% Test Accuracy**
+- 📤 Drag & Drop Image Upload
+- 🖼️ Image Preview Before Prediction
+- ⚡ Real-Time Prediction
+- 📊 Confidence Score Visualization
+- 🏆 Top-3 Predicted Digits
+- 🎨 Modern Glassmorphism User Interface
+- 📱 Responsive Design
+- ⚠️ Error Handling for Invalid Files
+- 🚀 Fast Flask Backend
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Python | Programming Language |
+| TensorFlow | Deep Learning Framework |
+| Keras | CNN Model |
+| OpenCV | Image Preprocessing |
+| NumPy | Numerical Computation |
+| Flask | Backend Framework |
+| HTML5 | Frontend |
+| CSS3 | Styling |
+| JavaScript | Client-side Interactivity |
+
+---
+
+## 📂 Project Structure
+
+```text
 Image-Classification-Project/
 │
 ├── app.py
@@ -39,69 +49,172 @@ Image-Classification-Project/
 ├── README.md
 │
 ├── model/
+│   └── mnist_model.keras
 │
 ├── static/
+│   ├── style.css
+│   ├── uploads/
+│   └── processed/
 │
-└── templates/
-⚙ Installation
+├── templates/
+│   └── index.html
+│
+└── screenshots/
+    ├── home.png
+    ├── prediction.png
+    └── top3.png
+```
 
-Clone the repository
+---
 
+## 🧠 Model Architecture
+
+The model is a **Convolutional Neural Network (CNN)** trained on the MNIST handwritten digit dataset.
+
+### Architecture
+
+- Conv2D (32 Filters)
+- MaxPooling2D
+- Conv2D (64 Filters)
+- MaxPooling2D
+- Flatten Layer
+- Dense (128 Neurons)
+- Dropout Layer
+- Dense (10 Output Classes using Softmax)
+
+---
+
+## 🖼️ Image Preprocessing
+
+Before prediction, every uploaded image undergoes automatic preprocessing:
+
+- Convert image to grayscale
+- Background detection
+- Automatic color inversion (if required)
+- Thresholding
+- Digit extraction using contours
+- Center alignment
+- Resize to **28 × 28**
+- Pixel normalization
+- Prediction using CNN model
+
+This preprocessing allows the application to work with different handwritten image styles.
+
+---
+
+## 🚀 Installation
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/YOUR_USERNAME/Image-Classification-Project.git
+```
 
-Move into the folder
+### 2. Navigate to Project Directory
 
+```bash
 cd Image-Classification-Project
+```
 
-Install dependencies
+### 3. Create Virtual Environment
 
+```bash
+python -m venv venv
+```
+
+### 4. Activate Virtual Environment
+
+Windows
+
+```bash
+venv\Scripts\activate
+```
+
+Linux / Mac
+
+```bash
+source venv/bin/activate
+```
+
+### 5. Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-Run
+### 6. Run the Flask Application
 
+```bash
 python app.py
+```
 
-Open
+Open your browser and visit:
 
+```
 http://127.0.0.1:5000
-📷 Screenshots
-Home Page
+```
 
-(Add home.png here after uploading)
+---
 
-Prediction Result
+## 📷 Screenshots
 
-(Add prediction.png here)
+### Home Page
 
-Top-3 Predictions
+![Home](screenshots/home.png)
 
-(Add top3.png here)
+### Prediction Result
 
-📈 Model Performance
+![Prediction](screenshots/prediction.png)
 
-Model Type:
+### Top-3 Predictions
 
-CNN
+![Top 3](screenshots/top3.png)
 
-Dataset:
+---
 
-MNIST
+## 📈 Model Performance
 
-Test Accuracy:
+| Metric | Value |
+|--------|-------|
+| Dataset | MNIST |
+| Model | CNN |
+| Test Accuracy | **99.59%** |
+| Classes | 10 |
+| Image Size | 28 × 28 |
 
-99.59%
+---
 
-Future Improvements
-Support multiple handwritten digits
-Drawing canvas
-Mobile optimization
-ONNX export
-REST API
-TensorFlow Lite deployment
-👩‍💻 Developer
+## 🌟 Future Improvements
 
-Vanshikha 
+- ✏️ Draw Digit on Canvas
+- 📱 Better Mobile Support
+- 🌙 Dark Mode
+- 📂 Batch Image Prediction
+- 📈 Prediction History
+- 🌐 REST API
+- ☁️ Cloud Deployment
+- 📦 TensorFlow Lite Version
 
-B.Tech Computer Science
+---
 
-AI/ML Enthusiast
+## 👩‍💻 Author
+
+**Vanshikha Singh**
+
+B.Tech Computer Science Engineering
+
+Artificial Intelligence & Machine Learning Enthusiast
+
+GitHub: https://github.com/Vanshikha2024
+
+LinkedIn: www.linkedin.com/in/vanshikha-b2037b2b7
+
+---
+
+## 📜 License
+
+This project is developed for learning and as part of internship project.
+
+
+---
+
