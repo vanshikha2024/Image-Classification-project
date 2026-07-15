@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Image Classification</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- ================= Loader ================= -->
+
+    <div id="loader">
+
+        <div class="loader-card">
+
+            <div class="spinner"></div>
+
+            <h2>🤖 AI is Predicting...</h2>
+
+            <p>Please wait a moment</p>
+
+        </div>
+
+    </div>
+
+    <!-- ================= Main Card ================= -->
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <h1>🤖 AI Image Classification</h1>
+
+            <p>
+                Upload a handwritten digit (0–9) and let the trained
+                TensorFlow model predict it.
+            </p>
+
+        </div>
+
+        <!-- Error -->
+
+        {% if error %}
+
+        <div class="error">
+
+            ⚠ {{ error }}
+
+        </div>
+
+        {% endif %}
+
+        <!-- Upload Form -->
+
+        <form action="/predict"
+              method="POST"
+              enctype="multipart/form-data"
+              onsubmit="showLoader()">
+
+            <label class="upload-box" for="imageInput">
+
+                <div class="upload-icon">
+
+                    📤
+
+                </div>
+
+                <h3>Drag & Drop Image</h3>
+
+                <p>or Click to Browse</p>
+
+            </label>
+
+            <input
+                type="file"
+                id="imageInput"
+                name="image"
+                accept=".png,.jpg,.jpeg"
+                hidden
+                required
+                onchange="previewImage(event)">
+
+            <!-- Preview -->
+
+            <div class="preview-area">
+
+                <img id="preview" src="">
+
+            </div>
+
+            <button id="predictBtn" type="submit">
+
+                🔍 Predict Digit
+
+            </button>
+
+        </form>
+
+        <!-- ================= Result ================= -->
+
+        {% if prediction is defined %}
+
+        <div class="result-card">
+
+            <h2>Prediction Result</h2>
+
+            <div class="result-grid">
+
+                <!-- Uploaded Image -->
+
+                <div class="image-section">
+
+                    <h3>Uploaded Image</h3>
+
+                    <img
+                        class="uploaded-result"
+                        src="{{ url_for('static', filename='uploads/' + image) }}"
+                        alt="Uploaded Image">
+
+                </div>
+
+                <!-- Prediction -->
+
+                <div class="prediction-section">
+
+                    <h3>🤖 AI Prediction</h3>
+
+                    <div class="digit">
+
+                        {{ prediction }}
+
+                    </div>
+
+                    <h4>Confidence</h4>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width: {{ confidence }}%;">
+
+                            {{ confidence }}%
+
+                        </div>
+
+                    </div>
+                    <div class="top3-box">
+
+    <h3>🏆 Top 3 Predictions</h3>
+
+    {% for digit, score in top3 %}
+
+    <div class="top3-item">
+
+        <span class="digit-label">
+            Digit {{ digit }}
+        </span>
+
+        <div class="top3-progress">
+
+            <div class="top3-fill"
+                 style="width:{{score}}%;">
+
+                {{score}}%
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <!-- Footer -->
+
+        <footer>
+
+            <hr>
+
+            <p>
+
+                ❤️ Built using
+                <b>TensorFlow</b>,
+                <b>Flask</b>,
+                <b>Python</b>
+
+            </p>
+
+            <p>
+
+                Developed by
+                <strong>Vanshikha Singh</strong>
+
+            </p>
+
+        </footer>
+
+    </div>
+
+    <!-- ================= JavaScript ================= -->
+
+    <script>
+
+        function previewImage(event) {
+
+            const preview = document.getElementById("preview");
+
+            preview.src = URL.createObjectURL(event.target.files[0]);
+
+            preview.style.display = "block";
+
+        }
+
+        function showLoader() {
+
+            document.getElementById("loader").style.display = "flex";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

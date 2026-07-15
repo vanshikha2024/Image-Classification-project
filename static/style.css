@@ -1,0 +1,661 @@
+/* ==========================
+   Google Font
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ==========================
+   Background
+========================== */
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#4F46E5,#2563EB,#06B6D4);
+
+    padding:30px;
+
+}
+
+/* ==========================
+   Main Card
+========================== */
+
+.container{
+
+    width:900px;
+
+    max-width:95%;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    color:white;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    animation:fadeIn .8s ease;
+
+}
+
+/* ==========================
+   Header
+========================== */
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.header h1{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.header p{
+
+    color:#E5E7EB;
+
+    font-size:16px;
+
+}
+
+/* ==========================
+   Upload Box
+========================== */
+
+.upload-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:3px dashed rgba(255,255,255,.6);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    margin-bottom:25px;
+
+}
+
+.upload-box:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.upload-icon{
+
+    font-size:55px;
+
+    margin-bottom:10px;
+
+}
+
+.upload-box h3{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.upload-box p{
+
+    color:#E5E7EB;
+
+}
+
+/* ==========================
+   Preview
+========================== */
+
+.preview-area{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+#preview{
+
+    display:none;
+
+    width:220px;
+
+    height:220px;
+
+    margin:20px auto;
+
+    object-fit:contain;
+
+    border-radius:15px;
+
+    background:white;
+
+    padding:12px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+
+/* ==========================
+   Button
+========================== */
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:white;
+
+    color:#2563EB;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+    background:#EEF2FF;
+
+}
+
+/* ==========================
+   Result Card
+========================== */
+
+.result-card{
+
+    margin-top:40px;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+
+    animation:fadeIn .7s ease;
+
+    transition:.3s;
+
+}
+
+.result-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.2);
+
+}
+
+.result-card h2{
+
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+/* ==========================
+   Grid
+========================== */
+
+.result-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:35px;
+
+    align-items:center;
+
+}
+
+.image-section{
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.image-section h3{
+
+    margin-bottom:15px;
+
+}
+
+.uploaded-result{
+
+    width:230px;
+
+    height:230px;
+
+    object-fit:contain;
+
+    background:white;
+
+    padding:14px;
+
+    border-radius:20px;
+
+    border:2px solid rgba(255,255,255,.4);
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.15),
+
+        inset 0 1px 2px rgba(255,255,255,.8);
+
+}
+.prediction-section{
+
+    text-align:center;
+
+    color:white;
+
+}
+.prediction-section h3{
+
+    margin-bottom:15px;
+
+    color:white;
+
+}
+.prediction-section h4{
+
+    color:white;
+
+}
+
+/* ==========================
+   Digit
+========================== */
+
+.digit{
+
+    font-size:110px;
+
+    font-weight:700;
+
+    background:linear-gradient(135deg,#60A5FA,#2563EB,#1D4ED8);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:pop .6s ease;
+
+}
+
+/* ==========================
+   Progress Bar
+========================== */
+
+.progress{
+
+    width:100%;
+
+    height:28px;
+
+    background:#E5E7EB;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin-top:15px;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    background:linear-gradient(90deg,#22C55E,#16A34A);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:width 1s ease;
+
+    animation:fillBar 1.5s ease;
+
+    @keyframes fillBar{
+
+    from{
+
+        width:0;
+
+    }
+
+}
+}
+
+/* ==========================
+   Error
+========================== */
+
+.error{
+
+    background:#FEE2E2;
+
+    color:#B91C1C;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+footer{
+
+    margin-top:35px;
+
+    text-align:center;
+
+}
+
+footer hr{
+
+    margin-bottom:20px;
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.3);
+
+}
+
+footer p{
+
+    margin:6px;
+
+    color:#E5E7EB;
+
+}
+
+/* ==========================
+   Loader
+========================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+
+    z-index:9999;
+
+}
+
+.loader-card{
+
+    background:white;
+
+    padding:35px 45px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    color:#222;
+
+}
+
+.spinner{
+
+    width:60px;
+
+    height:60px;
+
+    border:6px solid #E5E7EB;
+
+    border-top:6px solid #2563EB;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    animation:spin 1s linear infinite;
+
+}
+
+/* ==========================
+   Animations
+========================== */
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================
+   Mobile Responsive
+========================== */
+
+@media(max-width:768px){
+
+    .container{
+
+        padding:25px;
+
+    }
+
+    .header h1{
+
+        font-size:28px;
+
+    }
+
+    .result-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .uploaded-result{
+
+        width:180px;
+
+        height:180px;
+
+    }
+
+    .digit{
+
+        font-size:80px;
+
+    }
+
+}
+/* ===========================
+   TOP 3 PREDICTIONS
+=========================== */
+
+.top3-box{
+
+    margin-top:35px;
+
+    text-align:left;
+
+}
+
+.top3-box h3{
+
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+.top3-item{
+
+    margin-bottom:18px;
+
+}
+
+.digit-label{
+
+    display:block;
+
+    color:white;
+
+    font-weight:bold;
+
+    margin-bottom:6px;
+
+}
+
+.top3-progress{
+
+    width:100%;
+
+    height:22px;
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.top3-fill{
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:linear-gradient(90deg,#00c853,#64dd17);
+
+    color:white;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    line-height:22px;
+
+    transition:1s;
+
+}
